@@ -14,24 +14,47 @@
 <body>
     <header>
         <h1>Code quiz</h1>
+        <button type="button" class="btn btn-outline-warning btn-lg">High scores</button>
         <h2>Timer: <span id="timer"></span></h2>
     </header>
     <main class="container">
 
         <h1 class="startPage row">Coding Quiz</h1>
-        <p class="startPage row" id="rules"></p>
+        <p class="startPage row" id="rules">Press start and answer the 5 multiple choice questions. On completion enter your initials and submit to save your score</p>
         <button type="button" class="startPage row btn btn-outline-dark btn-lg" id="startBtn">Start</button>
 
-        <div class="quiz col-12 col-md-9 col-lg-8 col-xl-6" id="quizBox">
-            <div class="quiz w-100" id="questionBox">
-                <h3 class="quiz" id="question"></h3>
+        <div class="col-12 col-md-9 col-lg-8 col-xl-6" id="quizBox">
+            <div class="w-100" id="questionBox">
+                <h3 id="question"></h3>
             </div>
-            <div class="quiz w-100" id="answerBox">
-                <ul class="list-group" id="answers">
+            <div class="w-100" id="answerBox">
+                <ul class="list-group" id="answers1">
 
                 </ul>
-                <span class="quiz" id="rightWrong"></span>
+                <ul style="display: none;" class="list-group" id="answers2">
+
+                </ul>
+                <ul style="display: none;" class="list-group" id="answers3">
+
+                </ul>
+                <ul style="display: none;" class="list-group" id="answers4">
+
+                </ul>
+                <ul style="display: none;" class="list-group" id="answers5">
+
+                </ul>
+                <span id="rightWrong"></span>
             </div>
+        </div>
+        <div style="display: none;" class="col-12 col-md-10 cpol-lg-8 col-xl-6" id="scoreBox">
+            <form>
+                <h2 id="finalScore"></h2>
+                <div class="form-group">
+                  <label for="initials">Enter initials:</label>
+                  <input type="text" class="form-control" id="initials" placeholder="Initials">
+                </div>
+                <button type="button" class="btn btn-info" id="highScoreBtn">Submit score & Start over</button>
+            </form>    
         </div>
     </main>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
