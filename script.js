@@ -36,6 +36,7 @@ const question5Answers = [
   "unnecessary",
   "all of the above",
 ];
+var setStorage = localStorage.setItem("highScores", "")
 var timeAmount = 60;
 var score = 0;
 let countDown;
@@ -140,10 +141,10 @@ function scoreCard() {
 function addHighScore(event) {
     event.preventDefault();
   var highScores = localStorage.getItem("highScores");
-  highScores = highscores ? highScores.split(`,`) : [];
-  highScores.push(initials + ": " + score)
+  highScores = highscores ? JSON.parse(highScores) : {};
+  highScores[initials] = score
   console.log(highScores);
-  localStorage.setItem(`highScores`, highScores.toString());
+  localStorage.setItem(`highScores`, JSON.stringify(highScores));
  
 }
 
